@@ -3,7 +3,7 @@ const router = express.Router()
 const mongoose = require('mongoose')
 const {dbUrl} = require('../dbConfig')
 const {UserModel} = require('../schema/UserSchema')
-const {createToken,validate,adminGaurd, hashPassword, comparePassword} = require('../auth')
+const {createToken,validate,hashPassword, comparePassword} = require('../auth')
 
 mongoose.connect(dbUrl)
 
@@ -18,7 +18,7 @@ router.get('/',async(req,res)=>{
     `)
 })
 
-router.get('/all',validate,adminGaurd,async (req,res)=>{
+router.get('/all',validate,async (req,res)=>{
     try {
         let users = await UserModel.find()
         res
