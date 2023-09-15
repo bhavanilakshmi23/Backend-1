@@ -52,4 +52,4 @@ let validate = async (req,res,next)=>{//validate if token is not expired
 //         res.status(401).send({message:"Token Not Found"})
 // }
 
-module.exports={createToken,validate,adminGaurd,hashPassword,comparePassword}
+module.exports={createToken,validate,hashPassword,comparePassword}
